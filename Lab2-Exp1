@@ -1,0 +1,23 @@
+//Add code header
+
+int pinInUse = 1; //my LED pin
+int switchPin = 2; //input pin
+int switchValue;
+
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(pinInUse, OUTPUT);
+  pinMode(switchPin, INPUT_PULLUP);
+}
+
+void loop() {
+
+  switchValue = digitalRead(switchPin);
+  if(switchValue == 0){ //when switch is closed
+    digitalWrite(pinInUse, HIGH);
+  }else{
+    digitalWrite(pinInUse, LOW);
+  }
+
+}
